@@ -5,6 +5,7 @@ const app = createApp({
         return {
             imgNumbers : [1,2,3,4,5],
             activeIndex : 0,
+            autoSlide : false
         }      
     },
 
@@ -19,13 +20,19 @@ const app = createApp({
         },
         goToSlide(currentIndex) {
             this.activeIndex = currentIndex;
+        },
+        startAutoSlide() {
+            this.autoSlide = setInterval (() => {
+                this.nextSlide();
+            }, 3000);
+        },
+        stopAutoSlide() {
+            clearInterval(this.autoSlide);
         }
     },
 
     mounted() {
-        const autoSlide = setInterval (() => {
-            this.nextSlide();
-        }, 3000);
+        this.startAutoSlide();
     }
 });
 
