@@ -16,6 +16,9 @@ const app = createApp({
         prevSlide() {
             this.activeIndex--;
             if (this.activeIndex < 0) this.activeIndex = this.imgNumbers.length - 1;
+        },
+        goToSlide(currentIndex) {
+            this.activeIndex = currentIndex;
         }
     }
 });
