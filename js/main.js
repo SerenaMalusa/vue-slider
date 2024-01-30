@@ -11,12 +11,10 @@ const app = createApp({
 
     methods: {
         nextSlide() {
-            this.activeIndex++;
-            if (this.activeIndex >= this.imgNumbers.length) this.activeIndex = 0;
+            this.activeIndex = (this.activeIndex >= this.imgNumbers.length - 1) ? 0 : this.activeIndex + 1;
         },
         prevSlide() {
-            this.activeIndex--;
-            if (this.activeIndex < 0) this.activeIndex = this.imgNumbers.length - 1;
+            this.activeIndex = (this.activeIndex <= 0) ? this.imgNumbers.length - 1 : this.activeIndex - 1;
         },
         goToSlide(currentIndex) {
             this.activeIndex = currentIndex;

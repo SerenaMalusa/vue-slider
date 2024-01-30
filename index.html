@@ -43,7 +43,9 @@
                     <div class="slides">
 
                         <div class="slide">
-                            <img :src="`./img/0${imgNumbers[activeIndex]}.webp`" :alt="'picture 0'+imgNumbers[activeIndex]">
+                            <img 
+                            :src="`./img/0${imgNumbers[activeIndex]}.webp`" 
+                            :alt="'picture 0'+imgNumbers[activeIndex]">
                         </div>
 
                     </div>    
@@ -65,10 +67,10 @@
                 <div class="thumbanils m-0">
 
                     <div 
-                        v-for="(imgNum,index) in imgNumbers" 
-                        :class="activeClass = (index == activeIndex) ? 'active':''" 
-                        @click="goToSlide(index)"
-                        class="thumbnail">
+                    v-for="(imgNum,index) in imgNumbers" 
+                    :class="activeClass = (index == activeIndex) ? 'active':''" 
+                    @click="goToSlide(index)"
+                    class="thumbnail">
                         <img :src="`./img/0${imgNum}.webp`" :alt="'picture 0'+imgNum">
                     </div>
                     
