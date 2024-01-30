@@ -11,9 +11,11 @@ const app = createApp({
     methods: {
         nextSlide() {
             this.activeIndex++;
+            if (this.activeIndex >= this.imgNumbers.length) this.activeIndex = 0;
         },
         prevSlide() {
             this.activeIndex--;
+            if (this.activeIndex < 0) this.activeIndex = this.imgNumbers.length - 1;
         }
     }
 });
