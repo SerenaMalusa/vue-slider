@@ -16,8 +16,8 @@ const app = createApp({
         prevSlide() {
             this.activeIndex = (this.activeIndex <= 0) ? this.imgNumbers.length - 1 : this.activeIndex - 1;
         },
-        goToSlide(currentIndex) {
-            this.activeIndex = currentIndex;
+        goToSlide(thumbnailIndex) {
+            this.activeIndex = thumbnailIndex;
         },
         startAutoSlide() {
             this.autoSlide = setInterval (() => {
