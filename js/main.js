@@ -20,6 +20,12 @@ const app = createApp({
         goToSlide(currentIndex) {
             this.activeIndex = currentIndex;
         }
+    },
+
+    mounted() {
+        const autoSlide = setInterval (() => {
+            this.nextSlide();
+        }, 3000);
     }
 });
 
